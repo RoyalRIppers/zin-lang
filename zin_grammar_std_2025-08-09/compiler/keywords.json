@@ -1,0 +1,73 @@
+{
+  "IF": [
+    "si",
+    "if"
+  ],
+  "ELSE": [
+    "sinon",
+    "else"
+  ],
+  "FN": [
+    "fonction",
+    "fn"
+  ],
+  "RETURN": [
+    "retourne",
+    "return"
+  ],
+  "FOR": [
+    "pour",
+    "for"
+  ],
+  "FROM": [
+    "de",
+    "from"
+  ],
+  "TO": [
+    "à",
+    "a",
+    "to"
+  ],
+  "WHILE": [
+    "tantque",
+    "while"
+  ],
+  "PRINT": [
+    "affiche",
+    "print"
+  ],
+  "SLEEP": [
+    "pause",
+    "sleep"
+  ],
+  "IMPORT": [
+    "importe",
+    "importer",
+    "import"
+  ],
+  "STRUCT": [
+    "structure",
+    "struct"
+  ],
+  "TRUE": [
+    "vrai",
+    "true"
+  ],
+  "FALSE": [
+    "faux",
+    "false"
+  ],
+  "NUM_T": [
+    "nombre",
+    "num"
+  ],
+  "STR_T": [
+    "texte",
+    "str"
+  ],
+  "BOOL_T": [
+    "booléen",
+    "booleen",
+    "bool"
+  ]
+}

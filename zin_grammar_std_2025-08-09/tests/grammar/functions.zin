@@ -1,0 +1,8 @@
+fonction carre(nombre n) -> nombre {
+    retourne n * n
+}
+fn square(num n) -> num {
+    return n * n
+}
+affiche carre(9)
+print square(9)

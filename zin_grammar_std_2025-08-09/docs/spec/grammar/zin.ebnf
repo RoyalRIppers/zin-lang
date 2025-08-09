@@ -1,0 +1,77 @@
+(* Zin EBNF v0.1 draft — FR/EN keywords équivalents *)
+
+program     = { declaration | statement } EOF ;
+
+declaration = functionDecl 
+            | varDecl
+            | structDecl
+            | importDecl
+            ;
+
+functionDecl = ( "fonction" | "fn" ) ident "(" [ params ] ")" [ returnType ] block ;
+params       = param { "," param } ;
+param        = typeSpec ident ;
+
+returnType   = "->" typeSpec ;
+
+varDecl      = typeSpec ident [ "=" expression ] terminator ;
+
+structDecl   = ( "structure" | "struct" ) ident "{" { structField } "}" ;
+structField  = typeSpec ident terminator ;
+
+importDecl   = ( "importe" | "importer" | "import" ) modulePath terminator ;
+modulePath   = ident { "." ident } ;
+
+statement   = block
+            | ifStmt
+            | whileStmt
+            | forStmt
+            | returnStmt
+            | printStmt
+            | sleepStmt
+            | exprStmt
+            ;
+
+block       = "{" { statement } "}" ;
+
+ifStmt      = ( "si" | "if" ) "(" expression ")" block [ ( "sinon" | "else" ) block ] ;
+
+whileStmt   = ( "tantque" | "while" ) "(" expression ")" block ;
+
+forStmt     = ( "pour" | "for" ) ident ( "de" | "from" ) expression ( "à" | "a" | "to" ) expression block ;
+
+returnStmt  = ( "retourne" | "return" ) [ expression ] terminator ;
+
+printStmt   = ( "affiche" | "print" ) expression terminator ;
+sleepStmt   = ( "pause"   | "sleep" ) expression terminator ;
+
+exprStmt    = expression terminator ;
+
+terminator  = [ ";" ] ;  (* Un \n peut aussi servir de séparateur en implémentation *)
+
+(* Expressions et précédences *)
+expression  = assignment ;
+
+assignment  = logic_or [ ( "=" | "+=" | "-=" | "*=" | "/=" ) assignment ] ;
+
+logic_or    = logic_and { "||" logic_and } ;
+logic_and   = equality  { "&&" equality } ;
+equality    = comparison { ( "==" | "!=" ) comparison } ;
+comparison  = addition   { ( ">" | ">=" | "<" | "<=" ) addition } ;
+addition    = multiplication { ( "+" | "-" ) multiplication } ;
+multiplication = unary { ( "*" | "/" | "%" ) unary } ;
+unary       = ( "!" | "-" | "+" ) unary | call ;
+
+call        = primary { "(" [ args ] ")" } ;
+args        = expression { "," expression } ;
+
+primary     = number | string | boolean | ident | "(" expression ")" ;
+
+typeSpec    = ( "nombre" | "num" | "texte" | "str" | "booléen" | "booleen" | "bool" | ident ) ;
+
+number      = /* selon la spec lexicale */ ;
+string      = /* selon la spec lexicale */ ;
+boolean     = ( "vrai" | "true" | "faux" | "false" ) ;
+
+ident       = /* [A-Za-z_][A-Za-z0-9_]* */ ;
+EOF         = /* fin de fichier */ ;

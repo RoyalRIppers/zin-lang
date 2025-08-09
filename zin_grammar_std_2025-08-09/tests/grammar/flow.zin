@@ -1,0 +1,12 @@
+nombre x = 3
+num y = 7
+si (x < y) {
+    affiche "x<y"
+} sinon {
+    print "nope"
+}
+if (y > 5) {
+    print "big"
+} else {
+    print "small"
+}

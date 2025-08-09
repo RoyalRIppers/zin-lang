@@ -1,0 +1,6 @@
+pour i de 0 à 3 {
+    print i
+}
+for j from 3 to 5 {
+    print j
+}
