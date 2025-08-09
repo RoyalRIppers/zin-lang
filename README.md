@@ -81,3 +81,4 @@ See `examples/hello.zin` *(placeholder)*
 👤 **Creator**: Defever Valentin  
 📄 INPI: **DSO2025017398**  
 📧 Contact: [valentindefever@live.fr](mailto:valentindefever@live.fr)
+Discord communautaire:https://discord.gg/FDFwP5GNmX
